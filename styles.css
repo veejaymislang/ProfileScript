@@ -1,0 +1,292 @@
+/* Resetting default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, rgba(20, 20, 20, 0.9), rgba(0, 0, 0, 0.9)), url('background.jpg'); /* Dark gradient and image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff; /* Text color for contrast */
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    padding: 60px 20px;
+    color: white;
+    position: relative;
+}
+
+/* Profile Header */
+.profile-header {
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.profile {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #ffffff; /* White border */
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: scale(0.7);
+    animation: zoomIn 1.5s forwards;
+}
+
+/* Other styles remain unchanged... */
+
+
+@keyframes zoomIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-top: 15px;
+}
+
+/* Paragraph Styling */
+p {
+    font-size: 1.2rem;
+    opacity: 0;
+    animation: fadeInText 1s forwards 1.2s;
+}
+
+@keyframes fadeInText {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Navigation Bar Styles */
+nav {
+    padding: 15px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links li {
+    margin: 0 20px;
+    transition: transform 0.3s ease;
+}
+
+.nav-links li:hover {
+    transform: translateY(-3px);
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #00bcd4; /* Light cyan on hover */
+}
+
+/* Main Section Styling */
+main {
+    padding: 40px 20px;
+}
+
+h2 {
+    color: #E0E0E0; /* Light gray for good contrast */
+    font-size: 2rem;
+    text-align: center;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* Subtle shadow for readability */
+}
+
+/* Sections */
+.about, .skills, .contact {
+    padding: 30px;
+    margin: 30px 0;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s forwards;
+}
+
+.about {
+    animation-delay: 0.5s;
+}
+
+.skills {
+    animation-delay: 0.8s;
+}
+
+.contact {
+    animation-delay: 1.1s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Skills Section Styling */
+.skills ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.skills li {
+    background-color: #2575fc; /* Blue background */
+    color: white;
+    padding: 15px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.skills li:hover {
+    background-color: #00bcd4; /* Light cyan on hover */
+    transform: translateY(-5px);
+}
+
+/* Contact Section Styling */
+.contact a {
+    display: inline-flex; /* Ensures inline display */
+    align-items: center; /* Vertically align icon and text */
+    color: #00bcd4;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.contact a:hover {
+    border-color: #00bcd4; /* Light cyan underline on hover */
+}
+
+/* Contact Form Styling */
+.contact form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact input, .contact textarea {
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact input:focus, .contact textarea:focus {
+    border-color: #00bcd4; /* Light cyan border on focus */
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #00bcd4; /* Light cyan background */
+    color: white;
+    margin-top: 60px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .skills ul {
+        flex-direction: column;
+    }
+    
+    .nav-links li {
+        margin: 0 10px;
+    }
+
+    .profile {
+        width: 100px;
+        height: 100px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p, .nav-links a {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        padding: 10px 0;
+    }
+
+    .nav-links li {
+        margin: 0 5px;
+    }
+
+    .profile {
+        width: 90px;
+        height: 90px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    p, .nav-links a {
+        font-size: 0.9rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+}
+
+/* Contact Logo Styling */
+.contact-logo {
+    width: 30px; /* Adjust the size */
+    height: 30px;
+    margin-right: 12px; /* Spacing between logo and text */
+    vertical-align: middle;
+}
+
+/* Contact Links Styling */
+.contact a {
+    display: inline-flex; /* Ensure it stays inline */
+    align-items: center; /* Vertically align icon and text */
+    color: #00bcd4; /* Light cyan */
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.contact a:hover {
+    border-color: #00bcd4; /* Light cyan underline on hover */
+}
